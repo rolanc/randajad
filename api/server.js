@@ -35,10 +35,10 @@ app.use( (req, res, next) => {
 });
 
 const index = require('./index'),
-      usuario = require('./components/user/user.route'),
-      hoteles = require('./components/hotel/hotel.route');
+      usuario = require('./components/user/user.route');
+   
 
-app.use('/api', hoteles);
+
 app.use('/api',usuario);
 app.use('/', index);
 

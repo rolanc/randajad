@@ -8,9 +8,6 @@
         const dataAPI = {
             setUserData : _setUserData,
             getUserData : _getUserData,
-            setTareaData: _setTarealData,
-            getTareData: _getTareaData,
-            updateTareaData : _updateTareaData,
             setSession: _setSession,
             closeSession: _closeSession,
             getSession: _getSession
@@ -76,107 +73,7 @@
             return listaUsuarios; 
         }
 
-        function _setTareaData(tareaData) {
-            let response;
-
-            let request = $.ajax({
-                url: 'http://localhost:4000/api/save_hotel',
-                type: 'post',
-                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-                dataType: 'json',
-                async: false,
-                data: {
-                    'tipoHotel' : hotelData.tipoHotel,
-                    'nombreHotel' : hotelData.nombreHotel,
-                    'foto' : hotelData.foto,
-                    'latitud' : hotelData.latitud,
-                    'longitud' : hotelData.longitud,
-                    'provincia' : JSON.stringify(hotelData.provincia),
-                    'canton' : JSON.stringify(hotelData.canton),
-                    'distrito' : JSON.stringify(hotelData.distrito),
-                    'direccion' : hotelData.direccion,
-                    'telefonoServicioCliente' : hotelData.telefonoServicioCliente,
-                    'correoServicioCliente' : hotelData.correoServicioCliente,
-                    'telefonoReservacion' : hotelData.telefonoReservacion,
-                    'correoReservacion' : hotelData.correoReservacion
-                }
-            });
-
-            request.done((res) => {
-                response = res.success;
-                console.log(res.msj);
-            });
-            request.fail((error) => {
-                response = error;
-                console.log('Ocurrió un error');
-            });
-
-            return response;
-        }
-
-        function _getHotelData(){
-            let listaHoteles = [];
-            
-            let request = $.ajax({
-                url: 'http://localhost:4000/api/get_all_hotels',
-                type: 'get',
-                contentType: 'aplication/x-www-form-urlencoded;charset=utf-8',
-                dataType: 'json',
-                async: false,
-                data: {}
-            });
-
-            request.done ((hotelsListBD) => {
-                console.log('Datos que vienen desde la base de datos')
-                console.log (hotelsListBD);
-                listaHoteles = hotelsListBD;
-            })
-
-            request.fail(()=> {
-                listaHoteles = [];
-                console.log ('Ocurrió un error');
-            });
-            return listaHoteles; 
-        }
-
-        function _updateHotelData(hotelData) {
-            let response;
-
-            let request = $.ajax({
-                url: 'http://localhost:4000/api/update_hotel',
-                type: 'put',
-                contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-                dataType: 'json',
-                async: false,
-                data: {
-                    '_id' : hotelData._id,
-                    'tipoHotel' : hotelData.tipoHotel,
-                    'nombreHotel' : hotelData.nombreHotel,
-                    'foto' : hotelData.foto,
-                    'latitud' : hotelData.latitud,
-                    'longitud' : hotelData.longitud,
-                    'provincia' : JSON.stringify(hotelData.provincia),
-                    'canton' : JSON.stringify(hotelData.canton),
-                    'distrito' : JSON.stringify(hotelData.distrito),
-                    'direccion' : hotelData.direccion,
-                    'telefonoServicioCliente' : hotelData.telefonoServicioCliente,
-                    'correoServicioCliente' : hotelData.correoServicioCliente,
-                    'telefonoReservacion' : hotelData.telefonoReservacion,
-                    'correoReservacion' : hotelData.correoReservacion
-                }
-            });
-
-            request.done((res) => {
-                response = res.success;
-                console.log(res.msj);
-            });
-            request.fail((error) => {
-                response = error;
-                console.log('Ocurrió un error');
-            });
-
-            return response;
-        }
+       
 
 
         function _setSession(value) {
