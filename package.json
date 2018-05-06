@@ -1,12 +1,12 @@
 {
   "name": "randajad",
   "version": "0.0.1",
-  "description": "ExamenProyecto",
+  "description": "Ampliacion",
   "main": "./api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Monserrat",
+  "author": "Rolo",
   "license": "ISC",
   "devDependencies": {
     "body-parser": "^1.18.2",
