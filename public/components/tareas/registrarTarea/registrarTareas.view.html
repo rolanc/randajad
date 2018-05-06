@@ -1,0 +1,174 @@
+<section id="registrotareas" class="row">
+    <div class="mt-5 mb-0">
+      <div class="col-md-12 mb-5">
+        <h1 id="tituloPrincipal" class="mt-1">Registro de Tareas</h1>
+        <p class="text-center texto-descripcion">Ingrese los datos solicitados para registrar una tarea</p>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <form ng-submit="vm.preRegistrarTarea(vm.nuevoTarea)" name="formRegisterTarea" novalidate autocomplete="off">
+  
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="tipoTarea">Seleccione el tipo de prioridad</label>
+            <select class="form-control" id="tipoTarea" name="tipoTarea" ng-model="vm.nuevoTarea.tipoTarea" required>
+              <option value="Baja"> Baja</option>
+              <option value="Media">Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+            <div ng-messages="formRegisterTarea.tipoTarea.$error" role="alert">
+              <div ng-message="required">
+                <small class="form-text text-muted">Este campo es requerido</small>
+              </div>
+              <div ng-message="maxlength">
+                <small class="form-text text-muted">Formato incorrecto</small>
+              </div>
+              <div ng-message="minlength">
+                <small class="form-text text-muted">Formato incorrecto</small>
+              </div>
+              <div ng-message="pattern">
+                <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="txtname">Nombre de la tarea</label>
+            <input type="text" id="txtname" class="form-control" name="campoNombre" required ng-model="vm.nuevoTarea.nombreTarea" required>
+            <div ng-messages="formRegisterTarea.campoNombre.$error" role="alert">
+              <div ng-message="required">
+                <small class="form-text text-muted">Este campo es requerido</small>
+              </div>
+              <div ng-message="maxlength">
+                <small class="form-text text-muted">Formato incorrecto</small>
+              </div>
+              <div ng-message="minlength">
+                <small class="form-text text-muted">Formato incorrecto</small>
+              </div>
+              <div ng-message="pattern">
+                <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+              </div>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mt-4">
+          <div class="form-group col-md-6">
+            <label for="txtNombreTarea">Descripcion</label>
+            <textarea id="txtDescripcion" class="form-control" name="campoNombre" ng-model="vm.nuevoTarea.descripcion" pattern="[ñáéíóúA-Za-z ]+"
+              required></textarea>
+            <div ng-messages="formRegisterTarea.campoNombre.$error" role="alert">
+              <div ng-message="required">
+                <small class="form-text text-muted">Este campo es requerido</small>
+              </div>
+              <div ng-message="pattern">
+                <small class="form-text text-muted">Formato incorrecto</small>
+              </div>
+            </div>
+          </div>
+  
+
+  
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="tipoTarea">Seleccione el Estado</label>
+              <select class="form-control" id="tipoEstado" name="tipoEstado" ng-model="vm.nuevoEstado.tipoEstado" required>
+                <option value="Pendiente">Pendiente</option>
+                <option value="En curso">En curso</option>
+                <option value="Realizada">Realizada</option>
+              </select>
+              <div ng-messages="formRegisterEstado.tipoEstado.$error" role="alert">
+                <div ng-message="required">
+                  <small class="form-text text-muted">Este campo es requerido</small>
+                </div>
+                <div ng-message="maxlength">
+                  <small class="form-text text-muted">Formato incorrecto</small>
+                </div>
+                <div ng-message="minlength">
+                  <small class="form-text text-muted">Formato incorrecto</small>
+                </div>
+                <div ng-message="pattern">
+                  <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row mt-4">
+              <div class="form-group col-md-6">
+                <label for="txtCosto">Costo</label>
+                <textarea id="txtCosto" class="form-control" name="campoCosto" ng-model="vm.nuevoTarea.costo" pattern="[ñáéíóúA-Za-z ]+"
+                  required></textarea>
+                <div ng-messages="formRegisterTarea.campoCosto.$error" role="alert">
+                  <div ng-message="required">
+                    <small class="form-text text-muted">Este campo es requerido</small>
+                  </div>
+                  <div ng-message="pattern">
+                    <small class="form-text text-muted">Formato incorrecto</small>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="tipoTarea">Seleccione el Estado</label>
+                  <select class="form-control" id="tipoEstado" name="tipoEstado" ng-model="vm.nuevoEstado.tipoEstado" required>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En curso">En curso</option>
+                    <option value="Realizada">Realizada</option>
+                  </select>
+                  <div ng-messages="formRegisterEstado.tipoEstado.$error" role="alert">
+                    <div ng-message="required">
+                      <small class="form-text text-muted">Este campo es requerido</small>
+                    </div>
+                    <div ng-message="maxlength">
+                      <small class="form-text text-muted">Formato incorrecto</small>
+                    </div>
+                    <div ng-message="minlength">
+                      <small class="form-text text-muted">Formato incorrecto</small>
+                    </div>
+                    <div ng-message="pattern">
+                      <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="tipoProyecto">Seleccione el Proyecto</label>
+                    <select class="form-control" id="tipoProyecto" name="tipoProyecto" ng-model="vm.nuevoEstado.tipoEstado" required>
+                      <option value="Web Tosty">Web Tosty</option>
+                      <option value="Aplicacion Necrohana">Aplicacion Necrohana</option>
+                      <option value="Lanzamiento Sailor Moon">Lanzamiento Sailor Moon</option>
+                      <option value="Pelicula Chancleta">Pelicula Chancleta</option>
+
+                    </select>
+                    <div ng-messages="formRegisterEstado.tipoEstado.$error" role="alert">
+                      <div ng-message="required">
+                        <small class="form-text text-muted">Este campo es requerido</small>
+                      </div>
+                      <div ng-message="maxlength">
+                        <small class="form-text text-muted">Formato incorrecto</small>
+                      </div>
+                      <div ng-message="minlength">
+                        <small class="form-text text-muted">Formato incorrecto</small>
+                      </div>
+                      <div ng-message="pattern">
+                        <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
+                      </div>
+                    </div>
+                  </div>
+  
+
+  
+
+        <button type="submit" class="btn btn btn-info">Registrar</button>
+      </form>
+    </div>
+  </section>
