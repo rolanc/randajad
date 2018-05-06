@@ -1,7 +1,7 @@
 (() => {
     'use strict';
     angular
-    .module('theStation', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload', 'ngAnimate', 'ngMap'])
+    .module('randajad', ['appRoutes', 'ngMessages', 'duScroll', 'ngFileUpload', 'ngAnimate'])
     .value('duScrollDuration', 2000)
     .value('duScrollOffset', 30);
 

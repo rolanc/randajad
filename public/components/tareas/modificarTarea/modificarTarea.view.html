@@ -1,21 +1,21 @@
-<section id="registroHoteles" class="row">
+<section id="registroTareas" class="row">
         <div class="mt-5 mb-0">
           <a href="" ui-sref="main.home" class="text-black link mt-3 ml-3">
             <i class="fas fa-chevron-left"></i>
             <strong>Volver</strong>
           </a>
           <div class="col-md-12 mb-5">
-            <h1 id="tituloPrincipal" class="mt-1">Registro de hoteles</h1>
-            <p class="text-center texto-descripcion">Ingrese los datos solicitados para registrar un hotel dentro de la plataforma de The Station</p>
+            <h1 id="tituloPrincipal" class="mt-1">Registro de Tareas</h1>
+            <p class="text-center texto-descripcion">Ingrese los datos solicitados para registrar una tarea</p>
           </div>
         </div>
         <div class="container-fluid">
-          <form ng-submit="vm.modificarHotel(vm.hotelPorModificar)" name="formRegisterHotel" novalidate autocomplete="off">
+          <form ng-submit="vm.modificarTarea(vm.tareaPorModificar)" name="formRegisterTarea" novalidate autocomplete="off">
       
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="tipoHotel">Seleccione el tipo de hotel</label>
-                <select class="form-control" id="tipoHotel" name="tipoHotel" ng-model="vm.hotelPorModificar.tipoHotel" required>
+                <label for="tipoTarea">Seleccione el tipo de tarea</label>
+                <select class="form-control" id="tipoTarea" name="tipoTarea" ng-model="vm.tareaPorModificar.tipoTarea" required>
                   <option value="De Montaña">De Montaña</option>
                   <option value="De Playa">De Playa</option>
                   <option value="De Cuidad">De Cuidad</option>
